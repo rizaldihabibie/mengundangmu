@@ -89,7 +89,7 @@
 							</center><br>
 							<div id="contact-form-section">
 								<div class="status alert alert-success" style="display: none"></div>
-								<form id="contact-form" class="contact" name="contact-form" method="post" action="send-mail.php">
+								<form id="contact-form" class="contact" name="contact-form" method="post" action="<?php echo base_url(); ?>guestbook/saveComment">
 									<span style="color: #fff;font-family: Coming Soon; font-size: 10pt;">
 										<div class="form-group">
 											<label class="radio-inline">
@@ -103,12 +103,6 @@
 											</label>
 										
 										</div>
-									<div class="form-group">
-										<input type="text" name="name" class="form-control" required="required" placeholder="Your Name">
-									</div>
-									<div class="form-group">
-										<input type="email" name="email" class="form-control" required="required" placeholder="Email Address">
-									</div>
 									
 									<div class="form-group">
 										<textarea name="message" id="message" required="required" class="form-control" placeholder="Intine isian untuk ucapan selamat, ga reti bhsa inggrise"></textarea>
