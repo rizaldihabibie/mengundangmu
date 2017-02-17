@@ -76,15 +76,17 @@
 				<li data-target="#main-carousel" data-slide-to="2"></li>
 			</ol><!--/.carousel-indicators--> 
 			<div class="carousel-inner">
-				<div class="item active" style="background-image: url(<?php echo base_url(); ?>assets/countdown/zamalia.jpg)"> 
+				<div class="item active" style="background-image: url(<?php echo base_url(); ?>assets/photo/slider/zamalia.jpg)"> 
 					<div class="carousel-caption"> 
 						<div> 
-							<h1 class="heading animated fadeInDown"><b>Zam zam</b><br><span style="color: #CB4146"><i class="fa fa-heart animated faa-pulse faa-fast" aria-hidden="true"></i></span><br><b>Alia</b></h1> 
-							<h4 class="animated fadeInUpBig">We Are Getting Married</h4> 
+							<center><h1 class="heading animated fadeInDown"><b>Zam zam</b><br><span style="color: #CB4146"><i class="fa fa-heart animated faa-pulse faa-fast" aria-hidden="true"></i></span><br><b>Alia</b></h1> 
+							<!-- <h4 class="animated fadeInUpBig">We Are Getting Married</h4>  -->
+													<img src="<?php echo base_url(); ?>assets/countdown/getting.png" class="img-responsive animated fadeInUpBig" alt="" width="400" height="300"></center><br>
+
 						</div> 
 					</div> 
 				</div>
-				<div class="item" style="background-image: url(<?php echo base_url(); ?>assets/template/images/slider/slide2.jpg)"> 
+				<div class="item" style="background-image: url(<?php echo base_url(); ?>assets/photo/slider/ok3.jpg)"> 
 					<div class="carousel-caption"> <div> 
 						<h2 class="heading animated bounceInRight">Save The Date</h2>
 						<span style="color: #CB4146"><b><p class="animated faa-tada">09 Maret 2017 </p></b></span>
@@ -184,7 +186,7 @@
 							</div>
 						</div>
 						<div class="col-sm-4">
-							<center><img src="<?php echo base_url(); ?>assets/countdown/karangan-bunga.png" class="img-responsive faa-flash animated faa-slow " alt="team member" width="400" height="600"></center>
+							<center><img src="<?php echo base_url(); ?>assets/countdown/logotgh2.png" class="img-responsive faa-flash animated faa-slow " alt="team member" width="800" height="1000"></center>
 						</div>
 						<div class="col-sm-4">
 							<div class="single-service">
@@ -230,7 +232,7 @@
 									<!-- </div> -->
 								</div>
 								<div class="col-sm-4">
-									<center><img src="<?php echo base_url(); ?>assets/countdown/karangan-bunga.png" class="img-responsive faa-flash animated faa-slow " alt="team member" width="400" height="600"></center>
+									<center><img src="<?php echo base_url(); ?>assets/countdown/karangan-bunga.png" class="img-responsive " alt="team member" width="400" height="600"></center>
 								</div>
 								<div class="col-sm-4">
 									<!-- <div class="single-service"> -->
@@ -264,6 +266,7 @@
 										<!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p> -->
 									</div>
 								</div>
+								
 								<div id="clients-carousel" class="carousel slide" data-ride="carousel"> <!-- Indicators -->
 									<!-- <ol class="carousel-indicators">
 										<li data-target="#clients-carousel" data-slide-to="0" class="active"></li>
@@ -271,13 +274,23 @@
 										<li data-target="#clients-carousel" data-slide-to="2"></li>
 									</ol>  -->
 									<!-- Wrapper for slides -->
+									
 									<div class="carousel-inner">
+										<?php if (count($list)==0): ?>
+												
+												<div class="alert alert-warning alert-dismissible" role="alert">
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<div class="fa fa-info-circle"></div> Tidak Ada Data<br>
+												</div>
+												<?php else: ?>
+												<?php foreach ($list as $row): ?>
 										<div class="item active">
 											<div class="single-client">
 												<div class="media">
-													<img class="pull-left" src="<?php echo base_url(); ?>assets/template/images/clients/client1.jpg" alt="">
+													<img class="pull-left" src="<?php echo $row->picture_url?>" alt="" width="150" height="150">
 													<div class="media-body">
-														<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p></blockquote>
+														<br><p><?php echo $row->first_name?>&nbsp;<?php echo $row->last_name?>, says:</p>
+														<blockquote><p>"<?php echo $row->comment?>"</p></blockquote>
 													</div>
 												</div>
 											</div>
@@ -285,26 +298,32 @@
 										<div class="item">
 											<div class="single-client">
 												<div class="media">
-													<img class="pull-left" src="<?php echo base_url(); ?>assets/template/images/clients/client3.jpg" alt="">
+													<img class="pull-left" src="<?php echo $row->picture_url?>" alt="" width="150" height="150">
 													<div class="media-body">
-														<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p></blockquote>
+														<br><p><?php echo $row->first_name?>&nbsp;<?php echo $row->last_name?>, says:</p>
+														<blockquote><p>"<?php echo $row->comment?>"</p></blockquote>
 													</div>
 												</div>
 											</div>
 										</div>
-										<div class="item">
+										<!-- <div class="item">
 											<div class="single-client">
 												<div class="media">
-													<img class="pull-left" src="<?php echo base_url(); ?>assets/template/images/clients/client2.jpg" alt="">
+													<img class="pull-left" src="<?php echo $row->picture_url?>" alt="" width="150" height="150">
 													<div class="media-body">
-														<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p></blockquote>
+														<br><p><?php echo $row->first_name?>&nbsp;<?php echo $row->last_name?>, says:</p>
+														<blockquote><p>"<?php echo $row->comment?>"</p></blockquote>
 													</div>
 												</div>
 											</div>
-										</div>
-									</div><br><br><br>
-										<button class="btn btn-lg btn-default" onclick="window.open('<?php echo base_url(); ?>guestbook')">Add the presence <div class="fa fa-pencil animated faa-wrench"></div></button>
+										</div> -->
+										<?php endforeach; ?>
+												<?php endif; ?>
+									</div><br>
+									
+										<br><button class="btn btn-default" onclick="window.open('<?php echo base_url(); ?>guestbook')">Add the presence <div class="fa fa-pencil animated faa-wrench"></div></button>
 								</div>
+								
 							</div>
 						</div>
 					</section>
@@ -326,35 +345,35 @@
 							<div class="col-sm-3 col-xs-12 portfolio-item prewedding">
 								<div class="view efffect">
 									<div class="portfolio-image">
-									<img src="<?php echo base_url(); ?>assets/countdown/zamalia.jpg" alt=""></div>
+									<img src="<?php echo base_url(); ?>assets/photo/album/zamalia.jpg" alt=""></div>
 									<div class="mask text-center">
 										<h3></h3>
 										<h4></h4>
-										<a href="<?php echo base_url(); ?>assets/countdown/zamalia.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+										<a href="<?php echo base_url(); ?>assets/photo/album/zamalia.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-12 portfolio-item proposal">
 								<div class="view efffect" >
 									<div class="portfolio-image">
-										<img src="<?php echo base_url(); ?>assets/template/images/portfolio/2.jpg" alt="">
+										<img src="<?php echo base_url(); ?>assets/photo/album/ok8.jpg" alt="">
 									</div>
 									<div class="mask text-center">
 										<h3></h3>
 										<h4></h4>
-										<a href="<?php echo base_url(); ?>assets/template/images/portfolio/2.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+										<a href="<?php echo base_url(); ?>assets/photo/album/ok8.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-12 portfolio-item prewedding">
 								<div class="view efffect">
 									<div class="portfolio-image">
-										<img src="<?php echo base_url(); ?>assets/template/images/portfolio/3.jpg" alt="">
+										<img src="<?php echo base_url(); ?>assets/photo/album/ok3.jpg" alt="">
 									</div>
 									<div class="mask text-center">
 										<h3></h3>
 										<h4></h4>
-										<a href="<?php echo base_url(); ?>assets/template/images/portfolio/3.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
+										<a href="<?php echo base_url(); ?>assets/photo/album/ok3.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 									</div>
 								</div>
 							</div>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 15, 2017 at 10:19 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.21
+-- Host: localhost
+-- Generation Time: Feb 17, 2017 at 09:51 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -30,15 +30,9 @@ CREATE TABLE `comment` (
   `id_comment` int(11) NOT NULL,
   `id_guest` int(11) NOT NULL,
   `id_undangan` int(11) DEFAULT NULL,
-  `comment` longtext NOT NULL
+  `comment` longtext NOT NULL,
+  `is_hadir` enum('hadir','tidak hadir','tidak tahu','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `comment`
---
-
-INSERT INTO `comment` (`id_comment`, `id_guest`, `id_undangan`, `comment`) VALUES
-(1, 2147483647, NULL, 'jhghghj');
 
 -- --------------------------------------------------------
 
@@ -58,13 +52,6 @@ CREATE TABLE `guest` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `guest`
---
-
-INSERT INTO `guest` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `email`, `locale`, `picture_url`, `created`, `modified`) VALUES
-(1, 'google', '106932733263770224067', 'Rizaldi', 'Habibie', 'rizaldihabibie28@gmail.com', 'in', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '2017-02-15 10:18:06', '2017-02-15 10:18:06');
 
 -- --------------------------------------------------------
 
@@ -204,12 +191,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `undangan`
 --

@@ -18,8 +18,9 @@ class guestbook extends CI_Controller {
 
     public function index()
     {
+        $data['list'] = $this->comment->all();
         // $this->load->view('global_home/header_global_home');
-        $this->load->view('v_guestbook');
+        $this->load->view('v_guestbook', $data);
         // $this->load->view('global_home/footer_global_home');
 
     }
@@ -80,12 +81,15 @@ class guestbook extends CI_Controller {
             $commentData = array();
             $commentData['id_guest'] = $userProfile['id'];
             $commentData['comment'] = $this->input->post('message');
+            $commentData['is_hadir'] = $this->input->post('kehadiran');
             $this->comment->saveComment($commentData);
 
         } else {
             $authUrl = $gClient->createAuthUrl();
             redirect($authUrl);
         }
-        $this->load->view('v_guestbook');
+        $data['list'] = $this->comment->all();
+        $this->session->set_flashdata('message', 'Data berhasil disimpan, kami mengucapkan terimakasih atas ucapan yang sudah kamu berikan');
+        $this->load->view('v_guestbook', $data);
     }
 }
