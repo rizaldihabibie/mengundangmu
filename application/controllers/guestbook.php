@@ -79,17 +79,44 @@ class guestbook extends CI_Controller {
             }
 
             $commentData = array();
+
+            if($this->input->post('message')==null || $this->input->post('message')==""){
+                $commentData['comment'] = $this->session->userdata('SESS_GUEST_MESSAGE');
+                $commentData['comment'] = $this->session->userdata('SESS_GUEST_ABSEN');
+            }else{
+                $commentData['comment'] = $this->input->post('message');
+                $commentData['is_hadir'] = $this->input->post('kehadiran');
+            }
+
             $commentData['id_guest'] = $userProfile['id'];
-            $commentData['comment'] = $this->input->post('message');
-            $commentData['is_hadir'] = $this->input->post('kehadiran');
+            
             $this->comment->saveComment($commentData);
 
         } else {
             $authUrl = $gClient->createAuthUrl();
+            $message =  $this->input->post('message');
+            $absen = $this->input->post('kehadiran');
+            $session = array(
+                                'SESS_GUEST_MESSAGE' => $message,
+                                'SESS_GUEST_ABSEN' => $absen
+                            );
+                        
+                            $this->session->set_userdata( $session );
             redirect($authUrl);
         }
-        $data['list'] = $this->comment->all();
-        $this->session->set_flashdata('message', 'Data berhasil disimpan, kami mengucapkan terimakasih atas ucapan yang sudah kamu berikan');
-        $this->load->view('v_guestbook', $data);
+        $this->load->view('v_guestbook');
     }
+    //         $commentData['id_guest'] = $userProfile['id'];
+    //         $commentData['comment'] = $this->input->post('message');
+    //         $commentData['is_hadir'] = $this->input->post('kehadiran');
+    //         $this->comment->saveComment($commentData);
+
+    //     } else {
+    //         $authUrl = $gClient->createAuthUrl();
+    //         redirect($authUrl);
+    //     }
+    //     $data['list'] = $this->comment->all();
+    //     $this->session->set_flashdata('message', 'Data berhasil disimpan, kami mengucapkan terimakasih atas ucapan yang sudah kamu berikan');
+    //     $this->load->view('v_guestbook', $data);
+    // }
 }
