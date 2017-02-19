@@ -1,89 +1,87 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
-
-	<style type="text/css">
-
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
-</head>
-<body>
-
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div>
-
-</body>
+<!DOCTYPE html>
+<html lang="en" class="no-js" manifest="<?php echo base_url(); ?>assets/CSSMaskTransition/demo.appcache">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CSS Mask Transition | Demo 2 | Codrops</title>
+		<meta name="description" content="Experimental demos of the tutorial on how to use CSS Masks for creating interesting looking slide transitions" />
+		<meta name="keywords" content="css masks, slideshow, transition, animation, web design, effect" />
+		<meta name="author" content="Robin Delaporte for Codrops" />
+		<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/CSSMaskTransition/favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/CSSMaskTransition/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/CSSMaskTransition/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/CSSMaskTransition/css/component.css" />
+		<script src="<?php echo base_url(); ?>assets/CSSMaskTransition/js/modernizr-custom.js"></script>
+	</head>
+	<body class="demo-2">
+		<svg class="hidden">
+			<defs>
+				<symbol id="icon-arrow" viewBox="0 0 24 24">
+					<title>arrow</title>
+					<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+				</symbol>
+				<symbol id="icon-drop" viewBox="0 0 24 24">
+					<title>drop</title>
+					<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+					<path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
+				</symbol>
+			</defs>
+		</svg>
+		<main>
+			<header class="codrops-header">
+				
+				<a href="#" class="github-corner">
+					<svg width="80" height="80" viewBox="0 0 250 250" class="github-icon">
+						<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+						<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+						<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+					</svg>
+				</a>
+				<p class="message">You're seeing a fallback because your browser does not support CSS Masks.</p>
+			</header>
+			<div class="page-view">
+				<div class="project">
+					<div class="text">
+						<h1>SKYLINE</h1>
+						<p>Photo by James Traf</p>
+					</div>
+				</div>
+				<div class="project">
+					<div class="text">
+						<h1>Architecture</h1>
+						<p>Photo by Steve Richey</p>
+					</div>
+				</div>
+				<div class="project">
+					<div class="text">
+						<h1>Shadows</h1>
+						<p>Photo by Samuel Zeller</p>
+					</div>
+				</div>
+				<div class="project">
+					<div class="text">
+						<h1>Perspective</h1>
+						<p>Photo by Padurariu Alexandru</p>
+					</div>
+				</div>
+				<nav class="arrows">
+					<div class="arrow previous">
+						<svg viewBox="208.3 352 4.2 6.4">
+							<polygon class="st0" points="212.1,357.3 211.5,358 208.7,355.1 211.5,352.3 212.1,353 209.9,355.1"/>
+						</svg>
+					</div>
+					<div class="arrow next">
+						<svg viewBox="208.3 352 4.2 6.4">
+							<polygon class="st0" points="212.1,357.3 211.5,358 208.7,355.1 211.5,352.3 212.1,353 209.9,355.1"/>
+						</svg>
+					</div>
+				</nav>
+			</div>
+		</main>
+		<script src="<?php echo base_url(); ?>assets/CSSMaskTransition/js/zepto.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/CSSMaskTransition/js/imagesloaded.pkgd.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/CSSMaskTransition/js/demo.js"></script>
+	</body>
 </html>

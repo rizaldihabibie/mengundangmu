@@ -13,6 +13,10 @@
 	<link href="<?php echo base_url(); ?>assets/template/css/animate1.css" rel="stylesheet"> 
 	<link href="<?php echo base_url(); ?>assets/template/css/main.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/template/css/responsive.css" rel="stylesheet"> 
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/template/css/imagegrid_css/normalize.css" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/template/css/imagegrid_css/demo.css" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/template/css/imagegrid_css/style1.css" />
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/template/js/imagegrid_js/modernizr-custom.js"></script>
 
 
 
@@ -51,7 +55,7 @@
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
 						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> 
 					</button> 
-					<a class="navbar-brand" href="<?php echo base_url(); ?>"><h1><img src="<?php echo base_url(); ?>assets/countdown/Untitled-3.png" alt="logo"></h1></a> 
+					<a class="navbar-brand" href="<?php echo base_url(); ?>"><h1><img src="<?php echo base_url(); ?>assets/countdown/untitled-3.png" alt="logo"></h1></a> 
 				</div> 
 				<div class="collapse navbar-collapse"> 
 					<ul class="nav navbar-nav navbar-right"> 
@@ -127,7 +131,7 @@
 						</div>
 					</div>
 					<div class="col-sm-4 col-md-4">
-						<center><img src="<?php echo base_url(); ?>assets/countdown/Logotgh.png" class="img-responsive animated wobble" alt="team member" width="400" height="600"></center><br>
+						<center><img src="<?php echo base_url(); ?>assets/countdown/logotgh.png" class="img-responsive animated wobble" alt="team member" width="400" height="600"></center><br>
 					</div>
 					<div class="col-sm-4 col-md-4">
 						<div class="single-blog1">
@@ -479,12 +483,165 @@
 					</div>
 				</div>
 				</section> <!--/#portfolio-->
-		
-				<iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/81317739&amp;color=ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false"></iframe>
+
+			<div class="demo-1">
+				<div class="container">
+					<header class="codrops-header">
+						<div class="codrops-links">
+							<a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Tutorials/CSSProgress/" title="Previous Demo"><span>Previous Demo</span></a>
+							<a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/?p=25256" title="Back to the article"><span>Back to the Codrops article</span></a>
+						</div>
+						<h1>Image Grid Effects <span>Animations for photography grids</span></h1>
+						<nav class="codrops-demos">
+							<a class="current-demo" href="index.html">Demo 1</a>
+							<a href="index2.html">Demo 2</a>
+							<a href="index3.html">Demo 3</a>
+							<a href="index4.html">Demo 4</a>
+							<a href="index5.html">Demo 5</a>
+							<a href="index6.html">Demo 6</a>
+						</nav>
+					</header>
+					<div class="content">
+						<div class="grid">
+							<div class="grid__item" data-size="1280x853">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/1.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/1.jpg" alt="img01" />
+									<div class="description description--grid">Assemblage</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="958x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/2.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/2.jpg" alt="img02" />
+									<div class="description description--grid">Demesne</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="837x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/3.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/3.jpg" alt="img03" />
+									<div class="description description--grid">Felicity</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x961">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/4.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/4.jpg" alt="img04" />
+									<div class="description description--grid">Propinquity</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x1131">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/5.jpg" class="<?php echo base_url(); ?>assets/template/images/imagegrid-wrap"><img src="img/thumbs/5.jpg" alt="img05" />
+									<div class="description description--grid">Ephemeral</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x857">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/6.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/6.jpg" alt="img06" />
+									<div class="description description--grid">Surreptitious</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/7.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/7.jpg" alt="img07" />
+									<div class="description description--grid">Scintilla</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x853">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/8.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/8.jpg" alt="img08" />
+									<div class="description description--grid">Vestigial</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="865x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/9.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/9.jpg" alt="img09" />
+									<div class="description description--grid">Zephyr</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/10.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/10.jpg" alt="img10" />
+									<div class="description description--grid">Desideratum</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x850">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/11.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/11.jpg" alt="img11" />
+									<div class="description description--grid">Quixotic</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x853">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/1.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/1.jpg" alt="img01" />
+									<div class="description description--grid">Assemblage</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="958x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/2.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/2.jpg" alt="img02" />
+									<div class="description description--grid">Demesne</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="837x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/3.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/3.jpg" alt="img03" />
+									<div class="description description--grid">Felicity</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x961">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/4.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/4.jpg" alt="img04" />
+									<div class="description description--grid">Propinquity</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x1131">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/5.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/5.jpg" alt="img05" />
+									<div class="description description--grid">Ephemeral</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x857">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/6.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/6.jpg" alt="img06" />
+									<div class="description description--grid">Surreptitious</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/7.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/7.jpg" alt="img07" />
+									<div class="description description--grid">Scintilla</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x853">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/8.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/8.jpg" alt="img08" />
+									<div class="description description--grid">Vestigial</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="865x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/9.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/9.jpg" alt="img09" />
+									<div class="description description--grid">Zephyr</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x1280">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/10.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/10.jpg" alt="img10" />
+									<div class="description description--grid">Desideratum</div>
+								</a>
+							</div>
+							<div class="grid__item" data-size="1280x850">
+								<a href="<?php echo base_url(); ?>assets/template/images/imagegrid/original/11.jpg" class="img-wrap"><img src="<?php echo base_url(); ?>assets/template/images/imagegrid/thumbs/11.jpg" alt="img11" />
+									<div class="description description--grid">Quixotic</div>
+								</a>
+							</div>
+						</div>
+						<!-- /grid -->
+						<div class="preview">
+							<button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
+							<div class="description description--preview"></div>
+						</div>
+						<!-- /preview -->
+					</div>
+					<!-- /content -->
+					<!-- Related demos -->
+					<section class="content content--related">
+						<p>Images from <a href="http://www.unsplash.com">Unsplash.com</a></p>
+						<p>If you enjoyed this demo you might also like:</p>
+			<a class="media-item" href="http://tympanus.net/Development/AnimatedGridLayout/">
+				<img class="media-item__img" src="img/related/GridItemAnimation.jpg">
+				<h3 class="media-item__title">Grid Item Animation Layout</h3>
+			</a>
+			<a class="media-item" href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/">
+				<img class="media-item__img" src="img/related/ShapeHoverEffect.png">
+				<h3 class="media-item__title">Shape Hover Effect with SVG</h3>
+			</a>
+		</section>
+	</div>
+			</div>	
+
 					
 	<footer id="footer"> 
 		<div class="col-sm-12 bottom-separator">
-			<center><img src="<?php echo base_url(); ?>assets/countdown/Untitled-21.png" class="img-responsive" alt=""></center><br>
+			<center><img src="<?php echo base_url(); ?>assets/countdown/untitled-21.png" class="img-responsive" alt=""></center><br>
 		</div>
 		<div class="container"> 
 			<div class="text-center"> 
@@ -501,7 +658,10 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/template/js/jquery.parallax.js"></script> 
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/template/js/main.js"></script> 
 
-	
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/template/js/imagegrid_js/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/template/js/imagegrid_js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/template/js/imagegrid_js/classie.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/template/js/imagegrid_js/main.js"></script>
 
 </body>
 </html>
