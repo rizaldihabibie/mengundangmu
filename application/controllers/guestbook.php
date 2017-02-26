@@ -83,9 +83,11 @@ class guestbook extends CI_Controller {
             if($this->input->post('message')==null || $this->input->post('message')==""){
                 $commentData['comment'] = $this->session->userdata('SESS_GUEST_MESSAGE');
                 $commentData['comment'] = $this->session->userdata('SESS_GUEST_ABSEN');
-            }else{
+            }else if($this->session->userdata('SESS_GUEST_MESSAGE')!=null){
                 $commentData['comment'] = $this->input->post('message');
                 $commentData['is_hadir'] = $this->input->post('kehadiran');
+            }else{
+                redirect(base_url('guestbook'));
             }
 
             $commentData['id_guest'] = $userProfile['id'];
@@ -101,10 +103,12 @@ class guestbook extends CI_Controller {
                                 'SESS_GUEST_ABSEN' => $absen
                             );
                         
-                            $this->session->set_userdata( $session );
+            $this->session->set_userdata( $session );
             redirect($authUrl);
         }
-        $this->load->view('v_guestbook');
+        $data['list'] = $this->comment->all();
+        $this->session->set_flashdata('message', 'Data berhasil disimpan, kami mengucapkan terimakasih atas ucapan yang sudah kamu berikan');
+        redirect(base_url('guestbook'));
     }
     //         $commentData['id_guest'] = $userProfile['id'];
     //         $commentData['comment'] = $this->input->post('message');

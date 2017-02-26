@@ -18,7 +18,7 @@ class home extends CI_Controller {
     {
          $data['list'] = $this->comment->all();
         // $this->load->view('global_home/header_global_home');
-        $this->load->view('v_home', $data);
+       $this->load->view('v_home', $data);
         // $this->load->view('global_home/footer_global_home');
 
     }
