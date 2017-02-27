@@ -19,9 +19,7 @@ class guestbook extends CI_Controller {
     public function index()
     {
         $data['list'] = $this->comment->all();
-        // $this->load->view('global_home/header_global_home');
         $this->load->view('v_guestbook', $data);
-        // $this->load->view('global_home/footer_global_home');
 
     }
 
@@ -80,45 +78,48 @@ class guestbook extends CI_Controller {
 
             $commentData = array();
 
-            if($this->input->post('message')==null || $this->input->post('message')==""){
-                $commentData['comment'] = $this->session->userdata('SESS_GUEST_MESSAGE');
-                $commentData['comment'] = $this->session->userdata('SESS_GUEST_ABSEN');
+            if($this->input->post('pesan')==null || $this->input->post('pesan')==""){
+                if($this->session->userdata('SESS_GUEST_MESSAGE')!=null){
+                    $commentData['comment'] = $this->session->userdata('SESS_GUEST_MESSAGE');
+                    $commentData['is_hadir'] = $this->session->userdata('SESS_GUEST_ABSEN');
+                    $commentData['id_guest'] = $userProfile['id'];
+                    $this->comment->saveComment($commentData);
+                }else{
+                    //$this->guest->deleteUser($userData['oauth_uid'] );
+                   
+                    $this->session->set_flashdata('warning', 'Data gagal disimpan, anda tidak mengizinkan akses ke akun gmail!');
+                    $this->session->sess_destroy();
+                    redirect(base_url('guestbook'));
+                }
+                
             }else{
                 $commentData['comment'] = $this->input->post('message');
                 $commentData['is_hadir'] = $this->input->post('kehadiran');
+                $commentData['id_guest'] = $userProfile['id'];
+                $this->comment->saveComment($commentData);
             }
 
-            $commentData['id_guest'] = $userProfile['id'];
             
-            $this->comment->saveComment($commentData);
+            
+           
 
         } else {
             $authUrl = $gClient->createAuthUrl();
-            $message =  $this->input->post('message');
+            $pesan =  $this->input->post('pesan');
             $absen = $this->input->post('kehadiran');
             $session = array(
-                                'SESS_GUEST_MESSAGE' => $message,
+                                'SESS_GUEST_MESSAGE' => $pesan,
                                 'SESS_GUEST_ABSEN' => $absen
                             );
                         
-                            $this->session->set_userdata( $session );
+            $this->session->set_userdata( $session );
             redirect($authUrl);
         }
-         $data['list'] = $this->comment->all();
+        $data['list'] = $this->comment->all();
+        
         $this->session->set_flashdata('message', 'Data berhasil disimpan, kami mengucapkan terimakasih atas ucapan yang sudah kamu berikan');
+        $this->session->sess_destroy();
         redirect(base_url('guestbook'));
     }
-    //         $commentData['id_guest'] = $userProfile['id'];
-    //         $commentData['comment'] = $this->input->post('message');
-    //         $commentData['is_hadir'] = $this->input->post('kehadiran');
-    //         $this->comment->saveComment($commentData);
 
-    //     } else {
-    //         $authUrl = $gClient->createAuthUrl();
-    //         redirect($authUrl);
-    //     }
-    //     $data['list'] = $this->comment->all();
-    //     $this->session->set_flashdata('message', 'Data berhasil disimpan, kami mengucapkan terimakasih atas ucapan yang sudah kamu berikan');
-    //     $this->load->view('v_guestbook', $data);
-    // }
 }
