@@ -79,7 +79,7 @@
 											<div id="contact-form-section">
 												<p><span style="color: #fff;font-family: Merienda; font-size: 15pt; text-shadow: 1px 2px #B9B655">Please confirm attendance and write your special wishes</span></p><br>
 												<div class="status alert alert-success" style="display: none"></div>
-												<form id="contact-form" class="contact" name="contact-form" method="post" action="<?php echo base_url(); ?>guestbook/saveComment">
+												<form id="contact-form" class="contact" name="contact-form" method="post" action="<?php echo base_url(); ?>guestbook/saveCommentOnSession">
 													<span style="color: #fff;font-family: Coming Soon; font-size: 12pt;">
 														<?php if($this->session->flashdata('message')): ?>
 														<div class="alert alert-success alert-dismissible" role="alert">

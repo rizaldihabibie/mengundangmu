@@ -23,6 +23,17 @@ class guestbook extends CI_Controller {
 
     }
 
+    public function saveCommentOnSession(){
+        $pesan =  $this->input->post('pesan');
+        $absen = $this->input->post('kehadiran');
+        $session = array(
+            'SESS_GUEST_MESSAGE' => $pesan,
+            'SESS_GUEST_ABSEN' => $absen
+        );               
+        $this->session->set_userdata( $session );
+        $this->saveComment();
+    }
+
     public function saveComment(){
         // Include the google api php libraries
         include_once APPPATH."libraries/google-api-php-client/Google_Client.php";
@@ -77,48 +88,27 @@ class guestbook extends CI_Controller {
             }
 
             $commentData = array();
-
-            if($this->input->post('pesan')==null || $this->input->post('pesan')==""){
-                if($this->session->userdata('SESS_GUEST_MESSAGE')!=null){
-                    $commentData['comment'] = $this->session->userdata('SESS_GUEST_MESSAGE');
-                    $commentData['is_hadir'] = $this->session->userdata('SESS_GUEST_ABSEN');
-                    $commentData['id_guest'] = $userProfile['id'];
-                    $this->comment->saveComment($commentData);
-                }else{
-                    //$this->guest->deleteUser($userData['oauth_uid'] );
-                   
-                    $this->session->set_flashdata('warning', 'Data gagal disimpan, anda tidak mengizinkan akses ke akun gmail!');
-                    $this->session->sess_destroy();
-                    redirect(base_url('guestbook'));
-                }
-                
-            }else{
-                $commentData['comment'] = $this->input->post('message');
-                $commentData['is_hadir'] = $this->input->post('kehadiran');
+            
+            if($this->session->userdata('SESS_GUEST_MESSAGE')!=null){
+                $commentData['comment'] = $this->session->userdata('SESS_GUEST_MESSAGE');
+                $commentData['is_hadir'] = $this->session->userdata('SESS_GUEST_ABSEN');
                 $commentData['id_guest'] = $userProfile['id'];
                 $this->comment->saveComment($commentData);
+            }else{
+               //$this->guest->deleteUser($userData['oauth_uid'] )
+                $this->session->set_flashdata('warning', 'Data gagal disimpan, anda tidak mengizinkan akses ke akun gmail!');
+                // $this->session->sess_destroy();
+                redirect(base_url('guestbook'));
             }
-
-            
-            
-           
+    
 
         } else {
             $authUrl = $gClient->createAuthUrl();
-            $pesan =  $this->input->post('pesan');
-            $absen = $this->input->post('kehadiran');
-            $session = array(
-                                'SESS_GUEST_MESSAGE' => $pesan,
-                                'SESS_GUEST_ABSEN' => $absen
-                            );
-                        
-            $this->session->set_userdata( $session );
             redirect($authUrl);
         }
         $data['list'] = $this->comment->all();
-        
         $this->session->set_flashdata('message', 'Data berhasil disimpan, kami mengucapkan terimakasih atas ucapan yang sudah kamu berikan');
-        $this->session->sess_destroy();
+        // $this->session->sess_destroy();
         redirect(base_url('guestbook'));
     }
 
