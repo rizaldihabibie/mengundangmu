@@ -25,4 +25,8 @@ class guest extends CI_Model{
 
         return $userID?$userID:FALSE;
     }
+    public function deleteUser($id){
+        $this -> db -> where('oauth_uid', $id);
+        $this -> db -> delete('guest');
+    }
 }
