@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Wedding Website Designer">
 		<meta name="keywords" content="wedding, menikah, undangan nikah, proposal, prewedding, pernikahan, undangan online, nikah, wedding organizer, groom, bride, married, love story, akad nikah, holy matrimony" />
-		<meta name="author" content="">
-		<title>Zamzam Alia Mengundangmu</title>
+		<meta name="author" content="mengundangmu.com">
+		<title>Alia Zamzam Mengundangmu</title>
 		<link href="<?php echo base_url(); ?>assets/template/css/bootstrap.min.css" rel="stylesheet">
 		<link href="<?php echo base_url(); ?>assets/template/css/prettyPhoto.css" rel="stylesheet">
 		<link href="<?php echo base_url(); ?>assets/template/css/font-awesome.min.css" rel="stylesheet">
@@ -15,15 +15,12 @@
 		<link href="<?php echo base_url(); ?>assets/template/css/responsive.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/countdown/style1.css" type="text/css" />
 		<script type="text/javascript" src="<?php echo base_url(); ?>assets/countdown/countdown.js"></script>
-		<!-- 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/countdown/Bebas/stylesheet.css" type="text/css" />
-		-->
-		<!--[if lt IE 9]> <script src="js/html5shiv.js"></script>
-		<script src="js/respond.min.js"></script> <![endif]-->
+		
 		<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/countdown/logotab2.png">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url(); ?>assets/template/images/ico/apple-touch-icon-144-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url(); ?>assets/template/images/ico/apple-touch-icon-114-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url(); ?>assets/template/images/ico/apple-touch-icon-72-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>assets/template/images/ico/apple-touch-icon-57-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url(); ?>assets/template/images/ico/love144.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url(); ?>assets/template/images/ico/love114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url(); ?>assets/template/images/ico/love72.png">
+		<link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>assets/template/images/ico/love57.png">
 		</head><!--/head-->
 		<body>
 			<div class="preloader">
@@ -65,7 +62,7 @@
 						<section id="home">
 							<div id="main-carousel">
 								<div class="carousel-inner">
-									<div class="item active" style="background-image: url(<?php echo base_url(); ?>assets/template/images/clients/client-bg.jpg)">
+									<div class="item active" style="background-image: url(<?php echo base_url(); ?>assets/photo/slider/ok3.jpg)">
 									</div>
 								</div>
 							</div>
@@ -73,12 +70,11 @@
 						<section id="comment">
 							<div class="container">
 								<div class="comment-details">
-									<!-- <div class="pattern"></div> -->
 									<div class="row text-center clearfix">
 										<div class="col-sm-3">
 										</div>
 										<div class="col-sm-6">
-											<center><h2 class="title-one"><span style="color: #BC82FD;font-family: Petit Formal Script; font-size: 40pt;">Guest Book</span><br><img src="<?php echo base_url(); ?>assets/countdown/header3.png" class="img-responsive" alt=""></h2>
+											<center><h2 class="title-one"><span style="color: #BC82FD;font-family: Petit Formal Script; font-size: 40pt;">Guest Book</span><br><img src="<?php echo base_url(); ?>assets/countdown/footer1.png" class="img-responsive" alt=""></h2>
 											</center>
 											<div id="contact-form-section">
 												<p><span style="color: #fff;font-family: Merienda; font-size: 15pt; text-shadow: 1px 2px #B9B655">Please confirm attendance and write your special wishes</span></p><br>
@@ -89,6 +85,12 @@
 														<div class="alert alert-success alert-dismissible" role="alert">
 															<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 															<div class="fa fa-check"></div>&nbsp;<?php echo $this->session->flashdata('message'); ?>
+														</div>
+														<?php endif; ?>
+														<?php if($this->session->flashdata('warning')): ?>
+														<div class="alert alert-danger alert-dismissible" role="alert">
+															<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+															<div class="fa fa-info"></div>&nbsp;<?php echo $this->session->flashdata('warning'); ?>
 														</div>
 														<?php endif; ?>
 														<div class="form-group">
@@ -116,12 +118,12 @@
 															</div>
 															<div class="col-lg-8">
 																
-																<?php if ($this->session->flashdata('message')):
-																$message = $this->session->flashdata('message');
+																<?php if ($this->session->flashdata('pesan')):
+																$pesan = $this->session->flashdata('pesan');
 																else :
-																$message="";
+																$pesan="";
 																endif?>
-																<textarea name="message" id="message" required class="form-control" placeholder="tulis doa atau ucapan"></textarea><br>
+																<textarea name="pesan" class="form-control" placeholder="tulis doa atau ucapan" required></textarea><br>
 															</div>
 															
 														</div>
@@ -143,12 +145,11 @@
 							<section id="contact">
 								<div class="container">
 									<div class="contact-details">
-										<!-- <div class="pattern"></div> -->
 										<div class="row text-center clearfix">
 											<div class="col-sm-1">
 											</div>
 											<div class="col-sm-10">
-												<center><h2 class="title-one"><span style="color: #BC82FD;font-family: Petit Formal Script; font-size: 40pt;">Wishes</span><br><img src="<?php echo base_url(); ?>assets/countdown/header3.png" class="img-responsive" alt=""></h2>
+												<center><h2 class="title-one"><span style="color: #BC82FD;font-family: Petit Formal Script; font-size: 40pt;">Wishes</span><br><img src="<?php echo base_url(); ?>assets/countdown/footer1.png" class="img-responsive" alt=""></h2>
 												</center>
 												<?php if (count($list)==0): ?>
 												
@@ -165,7 +166,7 @@
 														<p><span style="font-size: 12pt; font-family: Eagle Lake;">"<?php echo $row->comment?>"</span></p>
 														
 														<div class="col-sm-12 text-center bottom-separator">
-															<img src="<?php echo base_url(); ?>assets/countdown/header1.png" class="img-responsive" alt=""><br>
+															<img src="<?php echo base_url(); ?>assets/countdown/bataskomen2.png" class="img-responsive" alt=""><br>
 														</div>
 													</div>
 												</div>
